@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h2 Use Dockerfile
+  h3 build base package
+  p docker build -f ./docker/Dockerfile.node.base . -t trydocker-node:13.6.0
+  h3 build env package
+  p docker build -f ./docker/Dockerfile.env . -t trydocker-env
+  h3 build app package
+  p docker build -f ./docker/Dockerfile.app . -t trydocker-app
+  h3 run app package
+  p(class='desc') /* 将容器的2333端口映射到主机3000，此时进入容器启动服务(npm run pro)访问http://localhost:3000 即可看到本内容 */
+  p docker run -p 127.0.0.1:3000:2333/tcp -t -i  trydocker-app /bin/bash
+
+  h2 Use docker-compose
+  p(class='desc') /* 将容器的2000端口映射到主机3000，此时访问http://localhost:3000 即可看到本内容 */
+  p docker-compose up
+  p docker-compose exec <name> bash

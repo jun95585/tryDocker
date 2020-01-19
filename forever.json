@@ -1,0 +1,9 @@
+{
+    "uid": "tryDocker",
+    "append": true,
+    "watch": false,
+    "debug": false,
+    "command": "node --harmony",
+    "script": "./bin/www",
+    "errFile": "error.log"
+}

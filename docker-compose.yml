@@ -1,0 +1,8 @@
+tryDocker:
+  image: trydocker-app
+  ports:
+   - "2000:3000"
+  environment:
+    NODE_ENV: 'production'
+    PORT: '2000'
+  command: npm run pro
