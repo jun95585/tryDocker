@@ -1,4 +1,6 @@
-tryDocker:
+version: "3.7"
+services:
+  tryDocker:
   image: trydocker-app
   ports:
    - "2000:3000"
